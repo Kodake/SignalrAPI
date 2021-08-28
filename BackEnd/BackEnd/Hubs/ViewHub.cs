@@ -11,7 +11,7 @@ namespace BackEnd.Hubs
         {
             ViewCount++;
 
-            await this.Clients.All.SendAsync("viewCountUpdate", ViewCount);
+            await Clients.All.SendAsync("viewCountUpdate", ViewCount);
         }
     }
 }

@@ -58,6 +58,7 @@ namespace BackEnd
             {
                 endpoints.MapControllers();
                 endpoints.MapHub<ViewHub>("/hub/view");
+                endpoints.MapHub<StringToolsHub>("/hub/stringtools");
             });
         }
     }
