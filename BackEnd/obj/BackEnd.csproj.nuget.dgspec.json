@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kodake\\Desktop\\SignalrAPI\\BackEnd\\BackEnd\\BackEnd.csproj": {}
+    "C:\\Users\\Kodake\\Desktop\\SignalrAPI\\BackEnd\\BackEnd.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kodake\\Desktop\\SignalrAPI\\BackEnd\\BackEnd\\BackEnd.csproj": {
+    "C:\\Users\\Kodake\\Desktop\\SignalrAPI\\BackEnd\\BackEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kodake\\Desktop\\SignalrAPI\\BackEnd\\BackEnd\\BackEnd.csproj",
+        "projectUniqueName": "C:\\Users\\Kodake\\Desktop\\SignalrAPI\\BackEnd\\BackEnd.csproj",
         "projectName": "BackEnd",
-        "projectPath": "C:\\Users\\Kodake\\Desktop\\SignalrAPI\\BackEnd\\BackEnd\\BackEnd.csproj",
+        "projectPath": "C:\\Users\\Kodake\\Desktop\\SignalrAPI\\BackEnd\\BackEnd.csproj",
         "packagesPath": "C:\\Users\\Kodake\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kodake\\Desktop\\SignalrAPI\\BackEnd\\BackEnd\\obj\\",
+        "outputPath": "C:\\Users\\Kodake\\Desktop\\SignalrAPI\\BackEnd\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Kodake\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
