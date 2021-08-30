@@ -14,6 +14,7 @@ namespace BackEnd.Repository
     {
         void Config();
     }
+    
     public class EmpleadoRepository : IEmpleadoRepository
     {
         private readonly IHubContext<ChartHub> _context;
@@ -21,10 +22,8 @@ namespace BackEnd.Repository
         public EmpleadoRepository(IConfiguration configuration,
                                     IHubContext<ChartHub> context)
         {
-            //_connectionString = configuration.GetConnectionString("DevConnection");
             _configuration = configuration;
             _context = context;
-
         }
 
         public void Config()
