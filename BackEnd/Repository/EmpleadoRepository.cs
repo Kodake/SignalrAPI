@@ -14,16 +14,19 @@ namespace BackEnd.Repository
     {
         void Config();
     }
-    
+
     public class EmpleadoRepository : IEmpleadoRepository
     {
         private readonly IHubContext<ChartHub> _context;
         private readonly IConfiguration _configuration;
+        private readonly ApplicationDbContext _dbctx;
         public EmpleadoRepository(IConfiguration configuration,
-                                    IHubContext<ChartHub> context)
+                                    IHubContext<ChartHub> context,
+                                    ApplicationDbContext dbctx)
         {
             _configuration = configuration;
             _context = context;
+            _dbctx = dbctx;
         }
 
         public void Config()
@@ -47,19 +50,24 @@ namespace BackEnd.Repository
                     SqlDependency.Start(connString);
                     var reader = cmd.ExecuteReader();
 
-                    while (reader.Read())
-                    {
-                        var chart = new EmpleadoViewModel
-                        {
-                            Salario = Convert.ToDouble(reader["Salario"]),
-                            Genero = Convert.ToString(reader["Genero"]),
-                        };
-
-                        chartValues.Add(chart);
-                    }
-                    return chartValues;
+                    return GetValues(reader, chartValues);
                 }
             }
+        }
+
+        private List<EmpleadoViewModel> GetValues(SqlDataReader reader, List<EmpleadoViewModel> chartValues)
+        {
+            while (reader.Read())
+            {
+                var chart = new EmpleadoViewModel
+                {
+                    Salario = Convert.ToDouble(reader["Salario"]),
+                    Genero = Convert.ToString(reader["Genero"]),
+                };
+
+                chartValues.Add(chart);
+            }
+            return chartValues;
         }
 
         public ChartViewModel GetSalaries()
