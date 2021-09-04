@@ -19,14 +19,11 @@ namespace BackEnd.Repository
     {
         private readonly IHubContext<ChartHub> _context;
         private readonly IConfiguration _configuration;
-        private readonly ApplicationDbContext _dbctx;
         public EmpleadoRepository(IConfiguration configuration,
-                                    IHubContext<ChartHub> context,
-                                    ApplicationDbContext dbctx)
+                                    IHubContext<ChartHub> context)
         {
             _configuration = configuration;
             _context = context;
-            _dbctx = dbctx;
         }
 
         public void Config()
